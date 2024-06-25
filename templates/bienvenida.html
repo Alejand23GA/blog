@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante "El Altar de Centeotl"</title>
+    <!-- Carga de archivo CSS estático -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Milkshake&display=swap">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#" onclick="mostrarComidaBebida()">
+                <img src="{% static 'icono.png' %}" alt="Logo de la cafetería">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" onclick="mostrarContenido('centeo-section')">CENTEOTL</a></li>
+                <li><a href="#" onclick="mostrarContenido('blog-section')">BLOG</a></li>
+                <li><a href="#" onclick="mostrarContenido('acerca-section')">ACERCA</a></li>
+            </ul>
+        </nav>
+        <a onclick="openNav()" class="menu" href="#"><button>CONTACTOS</button></a>
+        <div class="overlay" id="mobile-menu">
+            <a onclick="cerrarNav()" href="#" class="close">&times;</a> <!-- Botón para cerrar (X) -->
+            <div class="overlay-content">
+                <a href="#">WHATSAPP: 712-153-9867</a>
+                <a href="#">FACEBOOK: JOHANAN JUAN</a>
+                <a href="#">EMAIL: johananJuan606@gmail.com</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="restaurante">
+        <h1>EL ALTAR DE "CENTEOTL" </h1>
+    </div>
+
+            <!-- Sección de descripción con fondo blanco -->
+        <div class="descripcion">
+            <h2>Descripción del restaurante</h2>
+            <p>En El Altar de "Centeotl", celebramos la cocina tradicional mexicana con un enfoque en los sabores auténticos y los ingredientes frescos. Nuestro menú está inspirado en las recetas ancestrales que rinden homenaje al dios del maíz, ofreciendo una experiencia gastronómica única que te transportará a las raíces de nuestra cultura.</p>
+        </div>
+
+    <main>
+        <section class="blog-posts">
+            <!-- Caja 1 - Comida típica mexicana -->
+            <div class="box" id="comida">
+                <article>
+                    <h2>Comida típica mexicana</h2>
+                    <img src="{% static 'comida.jpg' %}" alt="Comida típica mexicana">
+                    <button onclick="mostrarProductos('comida')">Ver productos</button>
+                </article>
+            </div>
+        
+            <!-- Contenedor de productos (fuera de la caja de comida) -->
+            <div class="productos-contenedor" id="productos-comida">
+                <h3>Productos</h3>
+                <div class="columnas">
+                    <div class="columna">
+                        <p>Tacos al pastor.</p>
+                        <p>Mole con pollo.</p> 
+                        <p>Pozole.</p>
+                        <p>Tamales.</p>
+                        <p>Enchiladas.</p> <br>
+                        <p>Flautas.</p>
+                        <p>Molletes </p>
+                        <p>Tortas de milanesa, carnitas. </p>
+                        <p>Chiles Rellenos. </p>
+                        <p>Tacos de Guisado. </p>
+                        <p>Cochinita Pibil. </p>
+                        <p>Guacamole con Totopos. </p>
+                        <p>Sopes. </p>
+                        <p>Gorditas.</p> 
+                    </div>
+                    <div class="columna">
+                        <p>$15 MXN c/u.</p>
+                        <p>$110 MXN por tazón.</p>
+                        <p>$120 MXN por tazón.</p>
+                        <p>$25 MXN por pieza.</p>
+                        <p>$70 MXN odern de 3 enchiladas.</p>
+                        <p>$60 MXN orden de 3 flautas.</p>
+                        <p>$40 MXN por pieza.</p>
+                        <p>$80 MXN por pieza.</p>
+                        <p>$120 MXN por orden.</p>
+                        <p>$35 MXN por taco.</p>
+                        <p>$120 MXN por orden. </p>
+                        <p>$90 MXN por orden.</p>
+                        <p>$35 MXN por pieza.</p>
+                        <p>$40 MXN por pieza.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Caja 2 - Bebidas -->
+            <div class="box" id="bebidas">
+                <article>
+                    <h2>Bebidas</h2>
+                    <img src="{% static 'bebidas.jpg' %}" alt="Bebidas">
+                    <button onclick="mostrarProductos('bebidas')">Ver productos</button>
+                </article>
+            </div>
+        
+            <!-- Contenedor de productos (fuera de la caja de bebidas) -->
+            <div class="productos-contenedor" id="productos-bebidas">
+                <h3>Productos</h3>
+                <div class="columnas">
+                    <div class="columna">
+                        <p>Agua de Horchata.</p>
+                        <p>Agua de Jamaica.</p>
+                        <p>Agua de Limón con Chía.</p>
+                        <p>Tejuino.</p>
+                        <p>Pulque.</p>
+                        <p>Michelada.</p>
+                        <p>Clamato con Cerveza.</p>
+                        <p>Licuados de Frutas.</p>
+                        <p>Refrescos.</p>
+                        <p>Agua Mineral Preparada.</p>
+                        <p>Pozol (bebida de cacao y maíz).</p>
+                    </div>
+                    <div class="columna">
+                        <p>$30 MXN por vaso.</p>
+                        <p>$30 MXN por vaso.</p>
+                        <p>$30 MXN por vaso.</p>
+                        <p>$40 MXN por vaso.</p>
+                        <p>$60 MXN por vaso.</p>
+                        <p>$100 MXN por vaso.</p>
+                        <p>$100 MXN por vaso.</p>
+                        <p>$50 MXN por vaso.</p>
+                        <p>$30 MXN por botella.</p>
+                        <p>$50 MXN por vaso.</p>
+                        <p>$40 MXN por vaso.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Caja 3 - Postres -->
+            <div class="box" id="postres">
+                <article>
+                    <h2>Postres</h2>
+                    <img src="{% static 'postres.jpg' %}" alt="Postres">
+                    <button onclick="mostrarProductos('postres')">Ver productos</button>
+                </article>
+            </div>
+        
+            <!-- Contenedor de productos (fuera de la caja de postres) -->
+            <div class="productos-contenedor" id="productos-postres">
+                <h3>Productos</h3>
+                <div class="columnas">
+                    <div class="columna">
+                        <p>Flan.</p>
+                        <p>Tres Leches.</p>
+                        <p>Churros.</p>
+                        <p>Arroz con Leche.</p>
+                        <p>Pastel de Elote.</p>
+                        <p>Buñuelos.</p>
+                        <p>Mazamorra.</p>
+                        <p>Empanadas de cajeta.</p>
+                        <p>Pastes.</p>
+                        <p>Gelatina de mosaico.</p>
+                        <p>Dulce de camote.</p>
+                    </div>
+                    <div class="columna">
+                        <p>$30 MXN por porción.</p>
+                        <p>$40 MXN por porción.</p>
+                        <p>$20 MXN por porción.</p>
+                        <p>$30 MXN por porción.</p>
+                        <p>$60 MXN por porción.</p>
+                        <p>$20 MXN por porción.</p>
+                        <p>$50 MXN por porción.</p>
+                        <p>$50 MXN por porción.</p>
+                        <p>$30 MXN por porcion.</p>
+                        <p>$20 MXN por porción.</p>
+                        <p>$40 MXN por porción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+
+        <!-- Sección CENTEOTL -->
+        <section id="centeo-section" class="centeo-section contenido hidden">
+            <div class="centeo-content">
+                <h2>¿Quién es Centeotl?<br><br></h2>
+                <p>Cintéotl es el Dios del Maíz. Se dice que tras su nacimiento se refugió debajo de la tierra, y fue gracias a ello que se convirtió en el protector de uno de los principales cultivos del pueblo mexica: el maíz. <br></p>
+                <p>Según la mitología azteca, nació de la unión de Piltzintecuhtli (dios del sol naciente) y Tlazoltéotl
+                    (diosa de las inmundicias). Es esposo de Xochiquétzal. Tras su nacimiento se refugió bajo la tierra
+                    convirtiéndose en distintos sustentos, entre ellos, el maíz. Centéotl, además de representar al
+                    maíz, se le considera el patrón de beber una bebida espiritual embriagante. <br></p>
+                    <img src="{% static 'centeotl.jpg' %}" alt="Centeotl" class="centeotl-image"><br>
+                    <h2>¿Qué significa su nombre?</h2><br>
+                    <p>Su nombre está formado por las palabras centli, (que significa grano y se refiere al maíz seco) y
+                        teotl (que significa dios). Se le rendía culto en la celebración de Huey Tozoztli o Uey Tocoztli,
+                        realizada en el periodo que comprende el cuarto mes del calendario azteca, y que según un
+                        estudio realizado por INAH, va del 14 de abril al 3 de mayo del calendario Juliano, equivalente al
+                        24 de abril al 13 de mayo del calendario Gregoriano. Estas festividades y rituales prehispánicos
+                        servían para rendir homenaje a diferentes deidades que tenían influencia sobre las cosechas. A
+                        esta festividad se le llamaba “la gran vigilia” o “la gran espera”.</p>
+                    <img src="{% static 'centeotl2.jpg' %}" alt="Centeotl" class="centeotl-image"><br>
+                </div>
+        </section>
+
+<!-- Sección BLOG -->
+<section id="blog-section" class="blog-section contenido">
+    <div class="box" id="calamares">
+        <article>
+            <h2>Calamares en salsa americana</h2>
+            <img src="{% static 'calamares.jpg' %}" alt="Calamares">
+            <button onclick="mostrarReceta('calamares')">Ver receta</button>
+        </article>
+    </div>
+    
+    <div class="box" id="chuletas">
+        <article>
+            <h2>Chuletas de cerdo rellenas</h2>
+            <img src="{% static 'chuletascerdo.jpg' %}" alt="Chuletas">
+            <button onclick="mostrarReceta('chuletas')">Ver receta</button>
+        </article>
+    </div>
+
+    <div class="receta-contenedor" id="receta-calamares">
+        <div class="receta">
+            <h3>Receta de Calamares en salsa americana</h3>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>1 kilogramo de calamares.</li>
+                <li>2 tomates grandes.</li>
+                <li>1 cebolla mediana</li>
+                <li>2 papas medianas. </li>
+                <li>2 dientes de ajo. </li>
+                <li>Hojas de laurel. </li>
+                <li>Aceite de oliva. </li>
+                <li>Sal y pimienta al gusto. </li>
+            </ul>
+            <p>Instrucciones:</p>
+            <p>1- Limpia los calamares por el interior y exterior, no olvides quitar la capa morada externa que suele tener.
+            <br>2- Corta en ruedas y reserva.</p>
+            <p>3- Lleva a licuar los tomates junto con el ajo y la cebolla, comprueba que el resultado sea una salsa bastante espesa y con pequeños grumos.</p>
+            <p>4- Pon una sartén al fuego y calienta dos cucharadas de aceite, cocina los calamares hasta que estén blancos. Verás que mientras se cocinan los calamares botarán sustancia, no te alarmes ya que esta le dará bastante sabor al preparado. </p>
+            <p>5- Agrega la salsa junto con hojas de laurel, sal y pimienta.
+                <br>6- Sube el fuego al máximo y deja cocer por aproximadamente 8 minutos.
+                <br>7- Pica las papas en cubos pequeños y agrégalas al preparado. </p>
+            <p>8- Revuelve y deja que siga cociendo, esta vez con fuego medio. </p>
+            <p>9- Deberán pasar alrededor de 15 minutos más para que las patatas y calamares estén listos, si ves que en ese tiempo el líquido se evaporó demasiado, puedes agregar un poco de agua o caldo de pescado. </p>
+            <p>10- Servir en un plato hondo. </p>
+            <button onclick="cerrarReceta()">Cerrar</button>
+        </div>
+    </div>
+    
+    <div class="receta-contenedor" id="receta-chuletas">
+        <div class="receta">
+            <h3>Receta de Chuletas de cerdo rellenas</h3>
+            <p>Ingredientes:</p>
+            <ul>
+                <li>5 chuletas de cerdo.</li>
+                <li>1 lata de sopa de champiñones.</li>
+                <li>1 paquete de mezcla para relleno de pollo.</li>
+                <li>2 cebollas medianas. </li>
+                <li>Media taza de queso cheddar. </li>
+                <li>Media cucharadita de hojas de tomillo. </li>
+            </ul>
+            <p>Instrucciones:</p>
+            <p>1- Calienta el horno a 180°C.</p>
+            <p>2- La preparación de la mezcla para el relleno no es nada complicada, lo mejor es que sigas las instrucciones del paquete ya que estas pueden variar entre una marca y otra. </p>
+            <p>3- Pon a fuego alto un sartén, de preferencia antiadherente o en caso contrario con un poco de aceite. </p>
+            <p>4- Agrega las chuletas de cerdo y cocina hasta que se doren por ambos lados, esto ocurre en aproximadamente 4 minutos por cada lado. </p>
+            <p>5- En un recipiente mezcla la sopa con la cebolla y las hojas secas de tomillo. </p>
+            <p>6- Añade el preparado a las chuletas procurando que estén totalmente cubiertas. </p>
+            <p>7- Coloca sobre las chuletas el relleno y espolvorea con queso cheddar desmenuzado. </p>
+            <p>8- Lleva al horno por cerca de 30 minutos, tiempo en el que las chuletas deben cocer completamente </p>
+            <button onclick="cerrarReceta()">Cerrar</button>
+        </div>
+    </div>
+</section>
+
+        <!-- Sección ACERCA -->
+        <section id="acerca-section" class="acerca-section contenido hidden">
+            <div class="acerca-content">
+                <h2>¿Quiénes somos?</h2> <br>
+                <p>Somos alumnos del TECNOLOGICO DE ESTUDIOS SUPERIORES DE JOCOTITLAN, de la division Ingenieria en sistemas computacionales, grupo 0203.<br> El equipo esta conformado por: 
+                <br> - Johanan Juan Hernandez 
+                <br> - Diego de Jesus Mateo
+                <br> - Luis Alejandro Garduño Esquivel
+                <br> - Miguel Angel Reyes Martinez
+                <br> - Jesus Velasco Figueroa  
+                <br> - Gabriel Ramirez Martinez <br>
+                <img src="{% static 'equipo.jpg' %}" alt="Calamares">
+                <br> Este blog es un trabajo realizado en equipo para la materia de Programacion Orientada a objetos, nuestro docente es el distinguido Dr. en CI. Juan Alberto Antonio Velazques.
+                <br> "En la travesía de la vida, descubrimos que el verdadero camino hacia nuestros sueños está pavimentado con esfuerzo y perseverancia. Cada paso firme nos acerca un poco más a nuestras metas, recordándonos que el éxito no es solo un destino, sino una recompensa del trabajo constante y la determinación inquebrantable. Aunque los desafíos puedan ser grandes, la voluntad de seguir adelante nos guiará hacia la realización de nuestros más profundos anhelos. Con dedicación y fe en nosotros mismos, encontraremos que lo imposible se convierte en posible, transformando nuestros sueños en una realidad vibrante y satisfactoria."
+                <br> Nos es grato poder presentar este trabajo finalizado con éxito, y esperando nuestro docente pueda otorgarnos una calificacion destacable y aprobatoria, esperando que sea de su agrado y cumpla con sus expectativas.</p> 
+            </div>
+        </section>
+    </main>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Restaurante: "El Altar de Centeotl". Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Scripts JavaScript -->
+    <script type="text/javascript" src="{% static 'nav.js' %}"></script>
+</body>
+</html>
